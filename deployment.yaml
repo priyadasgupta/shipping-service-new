@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: shipping-service-new-02
+  name: shipping-service-new-02
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shipping-service-new-02
+    spec:
+      containers:
+      - image: us.icr.io/bootcamp1/shipping-service-bootcamp:3
+        name: shipping-service-new-02
+        ports:
+        - name: app-port
+          containerPort: 3001
